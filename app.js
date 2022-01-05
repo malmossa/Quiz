@@ -24,6 +24,18 @@ form.addEventListener("submit", (e) => {
 
   // Show result on page
   scrollTo(0, 0); // will scroll to the top on the page 0Y, 0X
-  result.querySelector("span").textContent = `${userScore}%`;
   result.classList.remove("d-none");
+
+  // Animating the score
+  let output = 0;
+
+  const timer = setInterval(() => {
+    result.querySelector("span").textContent = `${output}%`;
+
+    if (output === userScore) {
+      clearInterval(timer);
+    } else {
+      output++;
+    }
+  }, 10);
 });
