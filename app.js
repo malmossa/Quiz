@@ -23,6 +23,7 @@ form.addEventListener("submit", (e) => {
   });
 
   // Show result on page
+  scrollTo(0, 0); // will scroll to the top on the page 0Y, 0X
   result.querySelector("span").textContent = `${userScore}%`;
   result.classList.remove("d-none");
 });
